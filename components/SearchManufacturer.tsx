@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useState, Fragment } from 'react'
 
 
-const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerProps) => {
+const SearchManufacturer = ({selected, setSelected}: SearchManufacturerProps) => {
     const [query, setQuery] = useState('');
 
     const filteredManufacturers = query === "" ? manufacturers : 
@@ -17,7 +17,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer}: SearchManufacturerP
     console.log(filteredManufacturers)
   return (
     <div className='search-manufacturer'>
-        <Combobox value={manufacturer} onChange={setManufacturer}>
+        <Combobox value={selected} onChange={setSelected}>
             <div className="relative w-full">
               <Combobox.Button className="absolute top-[14px]">
                 <Image src="/car-logo.svg" alt='Car-Logo' width={20} height={20} className='ml-4'/>
